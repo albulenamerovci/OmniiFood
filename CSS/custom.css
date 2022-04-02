@@ -138,7 +138,6 @@
 }
 
 .steps-content img{
-    align-self: end;
     width: 35%;
 }
 
@@ -158,20 +157,32 @@
 }
 
 .step--img {
+    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
-/* .step--img img{
-    display: block;
-    position: relative;
-}
-.step--img img::before {
+
+.step--img::before,
+.step--img::after {
     content: "";
     display: block;
+    
     position: absolute;
-
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%; 
+}
+.step--img::before{
     width: 60%;
     padding-bottom: 60%;
-    background-color: #cf711f;
-    
-} */
+    background-color: #fdf2e9;
+    z-index: -2;
+}
+.step--img::after{
+    width: 50%;
+    padding-bottom: 50%;
+    background-color: #fae5d3;
+    z-index: -1;
+}
